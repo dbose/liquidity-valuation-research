@@ -11,7 +11,7 @@ The project blends **macro-finance**, **econometrics**, and **machine-learning t
 
 ---
 
-## 🔍 Motivation
+## Motivation
 
 Since 2008, markets have been shaped by:
 
@@ -30,7 +30,7 @@ This project provides a **systematic answer** using a data-driven liquidity inde
 
 ---
 
-## 🏗️ Research Architecture
+## Research Architecture
 
 ### **1. Macro Liquidity Data Pipeline (FRED API)**
 
@@ -72,9 +72,9 @@ A sparse PCA / elastic-net PCA that:
 * Reduces multicollinearity
 * Extracts the dominant liquidity factor
 
-[
+$$
 L(t) = w^\top Z_t
-]
+$$
 
 Where ( Z_t ) is the standardized, sign-adjusted proxy matrix.
 
@@ -100,9 +100,9 @@ A Hidden Markov Model fit to ( L(t) ):
 
 Instead of rolling z-scores, we anchor valuation to a **historical CAPE baseline (≈16.04)**:
 
-[
+$$
 V_{\text{spread}}(t) = \frac{16.04 - \text{CAPE}_t}{16.04}
-]
+$$
 
 Higher values ⇒ **cheaper relative to long-term history**.
 
@@ -139,7 +139,7 @@ Publication-quality plots:
 
 ---
 
-## 📈 Key Findings
+## Key Findings
 
 1. **Valuation predictability is regime-dependent**
    Predictive power is strong only under *tight liquidity*.
@@ -158,7 +158,7 @@ Publication-quality plots:
 
 ---
 
-## 📂 Repository Structure
+## Repository Target Structure
 
 ```bash
 .
@@ -187,7 +187,7 @@ Publication-quality plots:
 
 ---
 
-## 🧪 Example: Build the Liquidity Index
+## Example: Build the Liquidity Index
 
 ```python
 from src.liquidity_proxies import build_liquidity_proxies_augmented
@@ -202,7 +202,7 @@ hmm, regimes_df = fit_hmm_on_liquidity(L_t)
 
 ---
 
-## 📊 Example: Plot L(t), S&P 500, and Valuation Spread
+## Example: Plot L(t), S&P 500, and Valuation Spread
 
 ```python
 from src.plot_utils import plot_liquidity_equity_valuation
@@ -212,7 +212,7 @@ plot_liquidity_equity_valuation(L_t, spx_m, V_spread_t, regimes_df)
 
 ---
 
-## 🚀 Impact & Use Cases
+## Impact & Use Cases
 
 This research framework demonstrates:
 
@@ -232,7 +232,7 @@ Perfect for:
 
 ---
 
-## 🔧 Future Enhancements
+## Future Enhancements
 
 * Joint HMM on valuations + liquidity
 * Robust PCA (Huber / LAD PCA)
@@ -242,7 +242,7 @@ Perfect for:
 
 ---
 
-## 📜 Citation
+## Citation
 
 ```
 Bose, Debasish (2025). Liquidity Regimes and the Death (and Return) of Valuations.
